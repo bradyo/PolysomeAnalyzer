@@ -224,8 +224,6 @@ public class PolysomeAnalyzer extends javax.swing.JFrame {
         jControlPanel = new javax.swing.JPanel();
         jMainPanel = new javax.swing.JPanel();
         jImportButton = new javax.swing.JButton();
-        jMethodLabel = new javax.swing.JLabel();
-        jModeCombo = new javax.swing.JComboBox();
         jGroupPanel = new javax.swing.JPanel();
         jGroupLabel = new javax.swing.JLabel();
         jGroupCombo = new javax.swing.JComboBox();
@@ -318,25 +316,6 @@ public class PolysomeAnalyzer extends javax.swing.JFrame {
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(1, 5, 5, 5);
         jMainPanel.add(jImportButton, gridBagConstraints);
-
-        jMethodLabel.setText("Method:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(1, 5, 5, 5);
-        jMainPanel.add(jMethodLabel, gridBagConstraints);
-
-        jModeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Minima", "Gausian" }));
-        jModeCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jModeComboActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(1, 5, 5, 5);
-        jMainPanel.add(jModeCombo, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -957,14 +936,6 @@ private void jYAlignComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     updatePlotControls();
 }//GEN-LAST:event_jYAlignComboActionPerformed
 
-private void jModeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModeComboActionPerformed
-    if (jModeCombo.getSelectedIndex() == 0)
-        plotter.setMode(Plotter.MODE_NORMAL);
-    else
-        plotter.setMode(Plotter.MODE_GAUSSIAN);
-    plotter.repaint();
-}//GEN-LAST:event_jModeComboActionPerformed
-
 private void jXMaxTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXMaxTextActionPerformed
     double xMax = Double.parseDouble(jXMaxText.getText());
     plotter.setWindowXMax(xMax);
@@ -1046,8 +1017,6 @@ private void jPeakComboKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
     private javax.swing.JButton jImportButton1;
     private javax.swing.JFileChooser jImportChooser;
     private javax.swing.JPanel jMainPanel;
-    private javax.swing.JLabel jMethodLabel;
-    private javax.swing.JComboBox jModeCombo;
     private javax.swing.JPanel jOptionPanel;
     private javax.swing.JScrollPane jOutputTextPanel;
     private javax.swing.JLabel jPaddingLabel;
